@@ -13,10 +13,10 @@ const cartCtx =  useContext(CartContext);
 
   return (
     <div id="cart">
-      {cartCtx.length === 0 && <p>No items in cart!</p>}
-      {cartCtx.length > 0 && (
+      {cartCtx.items.length === 0 && <p>No items in cart!</p>}
+      {cartCtx.items.length > 0 && (
         <ul id="cart-items">
-          {cartCtx.map((item) => {
+          {cartCtx.items.map((item) => {
             const formattedPrice = `$${item.price.toFixed(2)}`;
 
             return (
