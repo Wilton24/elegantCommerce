@@ -45,8 +45,6 @@ function shoppingCartReducer(state, action){
 
       const selectedItemIndex = cartItems.findIndex(item => item.id === action.payload.productId);            
       const selectedItem = cartItems[selectedItemIndex];      
-
-      console.log("Selected Item quantity :", selectedItem.quantity);
       
       if(selectedItem.quantity <= 0){
         cartItems.splice(selectedItemIndex, 1);
@@ -58,23 +56,6 @@ function shoppingCartReducer(state, action){
         ...state,
         items: cartItems
       };
-
-      // const updatedItem = {
-      //   ...cartItems[updatedItemIndex],
-      // };
-
-      // updatedItem.quantity += parseInt(action.payload.amount);
-
-      // if (updatedItem.quantity <= 0) {
-      //   cartItems.splice(updatedItemIndex, 1);
-      // } else {
-      //   cartItems[updatedItemIndex] = updatedItem;
-      // }
-
-      // return {
-      //   ...state,
-      //   items: cartItems,
-      // };
   }
 };
 
